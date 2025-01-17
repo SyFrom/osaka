@@ -1,1 +1,99 @@
-hello world
+port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+unified-delay: true
+global-client-fingerprint: chrome
+ipv6: true
+dns:
+  enable: true
+  listen: :53
+  ipv6: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver: 
+    - 223.5.5.5
+    - 8.8.8.8
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+  fallback:
+    - https://1.0.0.1/dns-query
+    - tls://dns.google
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+
+proxies:        
+  - name: Reality
+    type: vless
+    server: 217.142.245.75
+    port: 59552
+    uuid: 15f956cf-f0d9-461b-b7a9-b1ed4747f735
+    network: tcp
+    udp: true
+    tls: true
+    flow: xtls-rprx-vision
+    servername: itunes.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: bW0oHnX0_ZFIO38w_RSOG_MI0zAEwcL-ZLNXhoooiTU
+      short-id: 1bb2a74ae9461372
+
+  - name: Hysteria2
+    type: hysteria2
+    server: 217.142.245.75
+    port: 59553
+    #  up和down均不写或为0则使用BBR流控
+    # up: "30 Mbps" # 若不写单位，默认为 Mbps
+    # down: "200 Mbps" # 若不写单位，默认为 Mbps
+    password: 05be3c14fc970ee0
+    sni: bing.com
+    skip-cert-verify: true
+    alpn:
+      - h3
+  - name: Vmess
+    type: vmess
+    server: speed.cloudflare.com
+    port: 59554
+    uuid: fc3a67d2-30cf-49fb-8bd4-aaac1f750d14
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    client-fingerprint: chrome  
+    skip-cert-verify: true
+    servername: framed-acquired-interest-metadata.trycloudflare.com
+    network: ws
+    ws-opts:
+      path: 0cc46c177eb7
+      headers:
+        Host: framed-acquired-interest-metadata.trycloudflare.com
+
+proxy-groups:
+  - name: 节点选择
+    type: select
+    proxies:
+      - 自动选择
+      - Reality
+      - Hysteria2
+      - Vmess
+      - DIRECT
+
+  - name: 自动选择
+    type: url-test #选出延迟最低的机场节点
+    proxies:
+      - Reality
+      - Hysteria2
+      - Vmess
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+
+
+rules:
+    - GEOIP,LAN,DIRECT
+    - GEOIP,CN,DIRECT
+    - MATCH,节点选择
