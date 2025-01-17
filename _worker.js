@@ -1,7 +1,7 @@
 
 // 部署完成后在网址后面输入/，加上下方设置的mytoken=的值，即可获取聚合后的节点
 
-let mytoken = 'auto'; //可根据需要自行设定，或者使用UUID在线生成网站进行生成：https://1024tools.com/uuid
+let mytoken = 'rayx'; //可根据需要自行设定，或者使用UUID在线生成网站进行生成：https://1024tools.com/uuid
 let BotToken =''; //可以为空，或电报@BotFather关注机器人，输入/start，选择：/newbot进行获取
 let ChatID =''; //可以为空，或电报@userinfobot中获取，选择：/start进行获取
 let TG = 0; //新手勿动， 开发者选项，1 为推送所有的访问信息，0 为不推送订阅转换后端的访问信息与异常访问
@@ -11,6 +11,7 @@ let SUBUpdateTime = 6; //更改此次设置订阅更新时间，单位小时
 //在以下输入您的自建节点链接或订阅链接，请保留双引号
 let MainData = `
 vless://ffccfafc-8811-45f8-f7b4-e29eb976df2e@217.142.245.75:59555?type=tcp&security=reality&sni=www.yahoo.com&pbk=O8EE-uriIc6vge2167AQELqTOxa3icjrKjHr8HN7kh4&flow=xtls-rprx-vision&sid=b6593c81&fp=chrome#osaka
+vmess://ewogICJ2IjogIjIiLAogICJwcyI6ICIiLAogICJhZGQiOiAiMjE3LjE0Mi4yNDUuNzUiLAogICJwb3J0IjogNTk1NTYsCiAgImlkIjogIjExNjcwNWI2LWJhMDAtNDc0Zi1lYzdmLWVhODRhY2ZkZmU5OSIsCiAgIm5ldCI6ICJ0Y3AiLAogICJ0eXBlIjogIm5vbmUiLAogICJob3N0IjogIiIsCiAgInBhdGgiOiAiIiwKICAiYXV0aG9yaXR5IjogIiIsCiAgInRscyI6ICJub25lIiwKICAic25pIjogIiIsCiAgImZwIjogIiIKfQ==
 `
 
 //请将机场订阅链接填入上方
