@@ -27,7 +27,7 @@ dns:
       - 240.0.0.0/4
 
 proxies:        
-  - name: 🇯🇵大阪Reality
+  - name: 🇯🇵Reality
     type: vless
     server: 217.142.245.75
     port: 59552
@@ -42,10 +42,13 @@ proxies:
       public-key: bW0oHnX0_ZFIO38w_RSOG_MI0zAEwcL-ZLNXhoooiTU
       short-id: 1bb2a74ae9461372
 
-  - name: 🇯🇵大阪Hysteria2
+  - name: 🇯🇵Hysteria2
     type: hysteria2
     server: 217.142.245.75
     port: 59553
+    #  up和down均不写或为0则使用BBR流控
+    # up: "30 Mbps" # 若不写单位，默认为 Mbps
+    # down: "200 Mbps" # 若不写单位，默认为 Mbps
     password: 05be3c14fc970ee0
     sni: bing.com
     skip-cert-verify: true
@@ -53,25 +56,8 @@ proxies:
       - h3
 
 proxy-groups:
-  - name: 节点选择
+  - name: Ciallo～(∠·ω< )⌒★
     type: select
     proxies:
-      - 自动选择
-      - Reality
-      - Hysteria2
-      - DIRECT
-
-  - name: 自动选择
-    type: url-test #选出延迟最低的机场节点
-    proxies:
-      - Reality
-      - Hysteria2
-    url: "http://www.gstatic.com/generate_204"
-    interval: 300
-    tolerance: 50
-
-
-rules:
-    - GEOIP,LAN,DIRECT
-    - GEOIP,CN,DIRECT
-    - MATCH,节点选择
+      - 🇯🇵Reality
+      - 🇯🇵Hysteria2
