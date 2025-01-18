@@ -1,4 +1,0 @@
-proxies:
-  - {"name":"日本大阪","type":"vmess","server":"217.142.245.75","port":59555,"cipher":"auto","uuid":"607e5857-4e9d-4560-a85b-348d7276d47a","alterId":0,"tls":false,"network":"ws","ws-opts":{"path":"/leave","headers":{}}}
-  - {"type":"vless","name":"日本大阪2-pksfn4jq","server":"217.142.245.75","port":59556,"uuid":"a39b3e8a-10bf-4461-b509-20e41b417396","tls":true,"client-fingerprint":"chrome","skip-cert-verify":false,"reality-opts":{"public-key":"J6mJDTOvCySsoQt6XGraoY2mn_GDZN3y4XBaPwkiLUU","short-id":"f6c0"},"network":"xhttp","xhttp-opts":{"path":"/xhttp"},"servername":"yahoo.com"}
-  - {"type":"vless","name":"日本大阪3-ukd3ddgn","server":"217.142.245.75","port":59557,"uuid":"b181e248-c672-4ff3-8bc9-b5f0a8dc1e2f","tls":true,"client-fingerprint":"chrome","skip-cert-verify":false,"reality-opts":{"public-key":"nSmYhff0DVthZzXRCAQ8N_xNRIaDbpp0hw9anxVybVM","short-id":"2520403ed1b820"},"network":"tcp","servername":"yahoo.com"}

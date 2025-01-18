@@ -1,0 +1,20 @@
+port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+unified-delay: true
+global-client-fingerprint: chrome
+ipv6: true
+proxies:
+  - {"name":"🇯🇵日本大阪","type":"vmess","server":"217.142.245.75","port":59555,"cipher":"auto","uuid":"607e5857-4e9d-4560-a85b-348d7276d47a","alterId":0,"tls":false,"network":"ws","ws-opts":{"path":"/leave","headers":{}}}
+  - {"type":"vless","name":"🇯🇵日本大阪2","server":"217.142.245.75","port":59557,"uuid":"b181e248-c672-4ff3-8bc9-b5f0a8dc1e2f","tls":true,"client-fingerprint":"chrome","skip-cert-verify":false,"reality-opts":{"public-key":"nSmYhff0DVthZzXRCAQ8N_xNRIaDbpp0hw9anxVybVM","short-id":"2520403ed1b820"},"network":"tcp","servername":"yahoo.com"}
+  - {"name":"🇩🇪德国法兰克福","type":"vmess","server":"130.61.108.67","port":43205,"cipher":"auto","uuid":"b74ff868-92a3-467c-b1f0-0cd9ff4cef99","alterId":0,"tls":false,"network":"ws","ws-opts":{"path":"/sx","headers":{}}}
+  - {"type":"vless","name":"🇩🇪德国法兰克福2","server":"130.61.108.67","port":43206,"uuid":"fd644675-0ae8-4d46-98e2-1e2d263d6171","tls":true,"client-fingerprint":"chrome","skip-cert-verify":false,"reality-opts":{"public-key":"sxn7aaZZI4ElG3vR5VIKACDdXNQWMnzXk14O7A5nBAY","short-id":"da97923075f9"},"network":"tcp","servername":"yahoo.com"}
+proxy-groups:
+  - name: 白雪乃爱の翅膀
+    type: select
+    proxies:
+      - 🇯🇵日本大阪
+      - 🇯🇵日本大阪2
+      - 🇩🇪德国法兰克福
+      - 🇩🇪德国法兰克福2
