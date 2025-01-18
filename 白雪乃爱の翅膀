@@ -4,7 +4,28 @@ mode: rule
 log-level: info
 unified-delay: true
 global-client-fingerprint: chrome
-ipv6: true
+dns:
+  enable: true
+  listen: :53
+  ipv6: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver: 
+    - 223.5.5.5
+    - 114.114.114.114
+    - 8.8.8.8
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+  fallback:
+    - https://1.0.0.1/dns-query
+    - tls://dns.google
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+
 proxies:
   - {"name":"🇯🇵日本大阪","type":"vmess","server":"217.142.245.75","port":59555,"cipher":"auto","uuid":"607e5857-4e9d-4560-a85b-348d7276d47a","alterId":0,"tls":false,"network":"ws","ws-opts":{"path":"/leave","headers":{}}}
   - {"type":"vless","name":"🇯🇵日本大阪2","server":"217.142.245.75","port":59557,"uuid":"b181e248-c672-4ff3-8bc9-b5f0a8dc1e2f","tls":true,"client-fingerprint":"chrome","skip-cert-verify":false,"reality-opts":{"public-key":"nSmYhff0DVthZzXRCAQ8N_xNRIaDbpp0hw9anxVybVM","short-id":"2520403ed1b820"},"network":"tcp","servername":"yahoo.com"}
