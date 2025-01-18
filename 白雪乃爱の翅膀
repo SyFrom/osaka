@@ -45,4 +45,4 @@ proxy-groups:
 rules:
   - GEOIP,LAN,DIRECT
   - GEOIP,CN,DIRECT
-  - MATCH,白雪乃爱の翅膀
+  - MATCH,DIRECT
