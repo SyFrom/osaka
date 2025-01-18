@@ -31,7 +31,7 @@ proxies:
     type: vless
     server: 217.142.245.75
     port: 59552
-    uuid: 15f956cf-f0d9-461b-b7a9-b1ed4747f735
+    uuid: ce0bc7b8-7a9b-4d2a-8709-6c4b307fd169
     network: tcp
     udp: true
     tls: true
@@ -39,8 +39,8 @@ proxies:
     servername: itunes.apple.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: bW0oHnX0_ZFIO38w_RSOG_MI0zAEwcL-ZLNXhoooiTU
-      short-id: 1bb2a74ae9461372
+      public-key: Fa6zZ8KixH2wt66iba193-xLsvu3qU0aGKDBClKQXHw
+      short-id: 34b5b99f90b27883
 
   - name: 🇯🇵Hysteria2
     type: hysteria2
@@ -49,14 +49,31 @@ proxies:
     #  up和down均不写或为0则使用BBR流控
     # up: "30 Mbps" # 若不写单位，默认为 Mbps
     # down: "200 Mbps" # 若不写单位，默认为 Mbps
-    password: 05be3c14fc970ee0
+    password: b9f79abdd8a53144
     sni: bing.com
     skip-cert-verify: true
     alpn:
       - h3
+  - name: 🇯🇵Vmess
+    type: vmess
+    server: speed.cloudflare.com
+    port: 59554
+    uuid: 49d882a5-f5f6-40a1-b525-0f91a7c18f40
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    client-fingerprint: chrome  
+    skip-cert-verify: true
+    servername: decimal-converted-refers-pond.trycloudflare.com
+    network: ws
+    ws-opts:
+      path: 61089e8bb739
+      headers:
+        Host: decimal-converted-refers-pond.trycloudflare.com
 
 proxy-groups:
-  - name: Ciallo～(∠·ω< )⌒★
+  - name: 原神の大陆
     type: select
     proxies:
       - 🇯🇵Reality
